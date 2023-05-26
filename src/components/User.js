@@ -1,7 +1,20 @@
-import classes from './User.module.css';
+import { Component } from "react";
 
-const User = (props) => {
-  return <li className={classes.user}>{props.name}</li>;
-};
+import classes from "./User.module.css";
+
+class User extends Component {
+  componentWillUnmount() {
+    console.log("User will unmount!");
+  }
+
+  render() {
+    // props property is added by Component class
+    return <li className={classes.user}>{this.props.name}</li>;
+  }
+}
+
+// const User = (props) => {
+//   return <li className={classes.user}>{props.name}</li>;
+// };
 
 export default User;
